@@ -1,0 +1,29 @@
+<template name="modalAddYogi">
+	<div id="addYogi" class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3>Aggiungi iscritto</h3>
+		</div>
+		<div class="modal-body">
+			<form class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label">Nome iscritto</label>
+					<div class="controls">
+						<input id="newYogiName" type="text" placeholder="Nome Cognome" />
+					</div>
+
+				</div>
+				<div class="control-group">
+					<label class="control-label">Numero di lezioni</label>
+					<div class="controls">
+						<input id="newYogiLessons" type="number" value="10" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal">Annulla</button>
+			<button type="btn" class="btn btn-primary">Salva</button>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,62 @@
+<template name="addLesson">
+	{{>navbar}}
+	<div class="container-fluid" id="addLesson">
+		<div class="row-fluid">
+		<div class="span6 offset3">
+			<h1>Aggiungi Lezione</h1>
+			<h3>Informazioni generali</h3>
+			<form class="form-horizontal well">
+				<div class="control-group">
+					<label class="control-label">
+						Data lezione
+					</label>
+					<div class="controls">
+						<div class="input-append date datepicker">
+							<input readonly type="text" id="newLessonDate"/>
+							<span class="add-on"><i class="icon-th"></i></span>
+						</div>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">
+						Costo abbonati
+					</label>
+					<div class="controls">
+						<input type="number" value="1" id="cost"/>
+					</div>
+				</div>
+			</form>
+			{{>guests}}
+			{{>presents}}
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="guests">
+	<h3>Ospiti</h3>
+	<div class="well" id="guests">
+		<div class="input-append">
+			<form>
+			<input class="input-large" id="guestName" type="text" placeholder="Nome Cognome">
+			<button class="btn" type="button">Aggiungi</button>
+			</form>
+		</div>
+		<ul>
+			{{#each guest}}
+			<li>{{name}} <a href="#"><i class="icon-remove" data-refer="{{name}}"></i></a></li>
+			{{/each}}
+		</ul>
+	</div>
+</template>
+
+<template name="presents">
+	<h3>Presenti alla lezione (<span id="numPresents">0</span>)
+		<input type="button" class="btn btn-large btn-primary pull-right" value="Conferma" />
+	</h3>
+	<div class="well">
+	{{#each yogi}}
+		<span id="{{_id}}" class="label yogi">{{name}}</span>
+	{{/each}}
+	</div>
+</template>

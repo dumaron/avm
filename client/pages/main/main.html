@@ -1,0 +1,22 @@
+<template name="main">
+	{{>navbar}}
+	<div class="container">
+		<div id="main" class="span6 offset3">
+			<label>
+				<input class="input-block-level filter" type="text" placeholder="Cerca iscritto"/>
+			</label>
+			{{>yogiList}}
+		</div>
+	</div>
+</template>
+
+<template name="yogiList">
+	<table id="userList" class="table">
+		{{#each yogi}}
+		<tr>
+			<td class="name"><a href="yogi/{{_id}}">{{name}}</a></td>
+			<td class="lessons {{getColor lessons}}">{{lessons}}</td>
+		</tr>
+		{{/each}}
+	</table>
+</template>

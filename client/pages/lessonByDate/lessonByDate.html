@@ -1,0 +1,17 @@
+<template name="lessonByDate">
+	{{>navbar}}
+	<div class="container-fluid" id="lessonByDate">
+		<div class="row-fluid">
+			{{>lessonsSidebarDate}}
+			<div id="main" class="offset3">
+				<h1>Lezione del {{date}}</h1>
+				<h3>Alla lezione erano presenti {{presents.length}} persone, ovvero:</h3>
+				<ul>
+				{{#each presents}}
+					<li><a href="/yogi/{{this}}">{{findYogiName this}}</a></li>
+				{{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+</template>

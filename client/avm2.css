@@ -1,0 +1,133 @@
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+form.addLessons {
+	margin-bottom: 0;
+	margin-top: 10px;
+}
+
+.userName a {
+	color: #111;
+	text-transform: capitalize;
+}
+
+#main ul {
+	font-size: 20px;
+}
+
+#main li {
+	line-height: 25px;
+}
+
+h1 {
+	margin-bottom: 30px;
+}
+
+.userName a.updateLink {
+	color: #777777;
+	font-size: 14px;
+}
+
+#sidebar {
+	margin-right: 30px;
+}
+
+#lessons {
+	margin-left: 27%;
+}
+
+.emphasis{
+	color: red;
+	font-weight: bold;
+}
+
+.guests .icon-remove {
+	margin-top: 5px;
+}
+
+.guests i:hover {
+	background-color: #c43c35;
+}
+
+/* NAVBAR */
+.navbar a:focus {
+	outline: 0;
+}
+
+/* MAIN PAGE */
+#main tr {
+	border: 0;
+}
+
+#main tr:last-child {
+	border-bottom: 1px solid #ddd;
+}
+
+#userList td, input.filter {
+	font-size: 20px;
+	line-height: 25px;
+}
+
+input.filter {
+	height: 40px;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+
+td.lessons {
+	background-color: #7ab5d3;
+	text-align: center;
+}
+
+td.important {
+	background-color: #b94a48;
+}
+
+td.warning {
+	background-color: #E9DC51;
+}
+
+#main td a {
+	color: #111;
+}
+
+/* ADD LESSON */
+
+#addLesson .label {
+	font-size: 1.8em;
+	padding: 0.3em;
+	margin: 0.2em;
+}
+
+.label-important {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.label {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+#guests {
+	padding-left: 10%;
+}
+
+#addLesson li {
+	font-size: 1.3em;
+}
+
+#addLesson li i {
+	margin-top: 4px;
+}
+
+/* LESSON BY DATE */
+#lessonByDate #main li {
+	list-style: none;
+}

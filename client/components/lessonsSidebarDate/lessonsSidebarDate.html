@@ -1,0 +1,10 @@
+<template name="lessonsSidebarDate">
+	<div class="span3 well" id="sidebar">
+		<input class="span12" type="text" placeholder="Cerca per data" />
+		<ul class="nav nav-list">
+			{{#each lesson}}
+			<li><a href="/lessons/date/{{_id}}">{{date}}</a></li>
+			{{/each}}
+		</ul>
+	</div>
+</template>
