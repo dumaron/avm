@@ -3,7 +3,7 @@
 	<div class="container">
 		<div id="main" class="span6 offset3">
 			<label>
-				<input class="input-block-level filter" type="text" placeholder="Cerca iscritto"/>
+				<input class="input-block-level filter" type="text" placeholder="Cerca iscritto" value="{{name}}"/>
 			</label>
 			{{>yogiList}}
 		</div>
@@ -11,12 +11,27 @@
 </template>
 
 <template name="yogiList">
+	<ul class="nav nav-tabs">
+		<li {{#if subIs 'single'}}class="active"{{/if}}>
+			<a href="/show/single">Singolo</a>
+		</li>
+		<li {{#if subIs 'monthly'}}class="active"{{/if}}>
+			<a href="/show/monthly">Mensile</a>
+		</li>
+	</ul>
 	<table id="userList" class="table">
-		{{#each yogi}}
-		<tr>
-			<td class="name"><a href="yogi/{{_id}}">{{name}}</a></td>
-			<td class="lessons {{getColor lessons}}">{{lessons}}</td>
-		</tr>
-		{{/each}}
+		<tbody>
+			{{#each yogi}}
+			<tr>
+				<td class="name"><a href="yogi/{{_id}}">{{name}}</a></td>
+				{{#if subIs 'single'}}
+					<td class="lessons {{getColor lessons}}">{{lessons}}</td>
+				{{/if}}
+				{{#if subIs 'monthly'}}
+					<td class="lessons">Mese</td>
+				{{/if}}
+			</tr>
+			{{/each}}
+		</tbody>
 	</table>
 </template>

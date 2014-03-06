@@ -1,6 +1,7 @@
 {
   "packages": {
     "iron-router": {},
-    "bootstrap-2-datetimepicker": {}
+    "bootstrap-2-datetimepicker": {},
+    "moment": {}
   }
 }

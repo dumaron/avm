@@ -1,5 +1,5 @@
 <template name="modalAddYogi">
-	<div id="addYogi" class="modal hide fade" tabindex="-1" role="dialog">
+	<div id="modalAddYogi" class="modal hide fade" tabindex="-1" role="dialog">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal">×</button>
 			<h3>Aggiungi iscritto</h3>
@@ -11,12 +11,31 @@
 					<div class="controls">
 						<input id="newYogiName" type="text" placeholder="Nome Cognome" />
 					</div>
-
 				</div>
 				<div class="control-group">
+					<div class="control-label">Tipo di abbonamento</div>
+					<div class="controls">
+						<select id="newYogiType">
+							<option value="singolo">Abbonamento singolo</option>
+							<option value="mensile">Abbonamento mensile</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group singolo">
 					<label class="control-label">Numero di lezioni</label>
 					<div class="controls">
-						<input id="newYogiLessons" type="number" value="10" />
+						<input class="newYogiLessons" type="number" value="10" />
+					</div>
+				</div>
+				<div class="control-group mensile">
+					<label class="control-label">
+						Inizio abbonamento
+					</label>
+					<div class="controls">
+						<div class="input-append date datepicker">
+							<input readonly type="text" class="newYogiStartSubscription"/>
+							<span class="add-on"><i class="icon-th"></i></span>
+						</div>
 					</div>
 				</div>
 			</form>

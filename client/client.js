@@ -7,7 +7,23 @@ Router.map(function () {
 	});
 	this.route('main', {
 		path: '/',
-		before: checkLogin
+		action: function() { this.redirect('/show/single');	}
+	});
+	this.route('showYogi', {
+		path: '/show/:type',
+		before: [
+			checkLogin,
+			function() {
+				Session.set('mainFilterType', this.params.type);
+				Session.set('mainFilterName', '');
+			}
+		],
+		template: 'main',
+		data: function() {
+			return {
+				type: this.params.type
+			};
+		}
 	});
 	this.route('addLesson', {
 		before: checkLogin
