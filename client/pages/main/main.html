@@ -23,12 +23,12 @@
 		<tbody>
 			{{#each yogi}}
 			<tr>
-				<td class="name"><a href="yogi/{{_id}}">{{name}}</a></td>
+				<td class="name"><a href="/yogi/{{_id}}">{{name}}</a></td>
 				{{#if subIs 'single'}}
-					<td class="lessons {{getColor lessons}}">{{lessons}}</td>
+					<td class="lessons {{getColorSingle lessons}}">{{lessons}}</td>
 				{{/if}}
 				{{#if subIs 'monthly'}}
-					<td class="lessons">Mese</td>
+					<td class="lessons {{getColorMonthly startSub}}">{{formatDate startSub}}</td>
 				{{/if}}
 			</tr>
 			{{/each}}

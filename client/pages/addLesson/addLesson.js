@@ -14,7 +14,7 @@ Template.presents.rendered = function() {
 };
 
 Template.presents.yogi = function() {
-	return Yogis.find(Session.get('mainFilter'), {sort:{name: 1}});
+	return Yogis.find({}, {sort:{name: 1}});
 };
 
 Template.guests.guest =  function() {

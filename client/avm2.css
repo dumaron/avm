@@ -79,6 +79,7 @@ input.filter {
 td.lessons {
 	background-color: #7ab5d3;
 	text-align: center;
+	width: 22%;
 }
 
 td.important {
