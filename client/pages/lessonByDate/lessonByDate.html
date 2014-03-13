@@ -4,8 +4,8 @@
 		<div class="row-fluid">
 			{{>lessonsSidebarDate}}
 			<div id="main" class="offset3">
-				<h1>Lezione del {{date}}</h1>
-				<h3>Alla lezione erano presenti {{presents.length}} persone, ovvero:</h3>
+				<h1>Lezione del {{humanForm date}}</h1>
+				<h3>Alla lezione erano presenti <span class="important">{{presents.length}}</span> persone, ovvero:</h3>
 				<ul>
 				{{#each presents}}
 					<li><a href="/yogi/{{this}}">{{findYogiName this}}</a></li>

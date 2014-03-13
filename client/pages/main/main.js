@@ -32,5 +32,5 @@ Template.yogiList.subIs = function(type) {
 };
 
 Template.yogiList.formatDate = function(startSub) {
-	return moment(startSub, 'YYYY-MM-DD').format('DD/MM/YYYY');
+	return moment(startSub, 'YYYY-MM-DD').add('month',1).format('DD/MM/YYYY');
 };

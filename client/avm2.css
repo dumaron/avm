@@ -132,3 +132,19 @@ td.warning {
 #lessonByDate #main li {
 	list-style: none;
 }
+
+.important {
+	color: #0088cc;
+	background-color: gainsboro;
+	border-radius: 4px;
+	font-style: italic;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+/* YOGI */
+.yogiInfo {
+	padding-top: 20px;
+	font-style: italic;
+	color: gray;
+}

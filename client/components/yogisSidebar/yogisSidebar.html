@@ -1,0 +1,10 @@
+<template name="yogisSidebar">
+	<div class="span3 well" id="sidebar">
+		<input class="span12" type="text" placeholder="Cerca per nome" />
+		<ul class="nav nav-list">
+			{{#each yogi}}
+			<li><a href="/yogi/{{_id}}">{{name}}</a></li>
+			{{/each}}
+		</ul>
+	</div>
+</template>

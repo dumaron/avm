@@ -3,7 +3,7 @@
 		<input class="span12" type="text" placeholder="Cerca per data" />
 		<ul class="nav nav-list">
 			{{#each lesson}}
-			<li><a href="/lessons/date/{{_id}}">{{date}}</a></li>
+			<li><a href="/lessons/date/{{_id}}">{{humanForm date}}</a></li>
 			{{/each}}
 		</ul>
 	</div>

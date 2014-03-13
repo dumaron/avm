@@ -1,6 +1,35 @@
 <template name="yogi">
 	{{>navbar}}
-	<div class="container">
-		<h1>{{name}}</h1>
+	<div class="container-fluid" id="lessonsByDate">
+		<div class="row-fluid">
+			{{>yogisSidebar}}
+			<div id="main">
+				{{>yogiDetail}}
+			</div>
+		</div>
+	</div>
+	{{>modalAddMonth}}
+	{{>modalAddLessons}}
+</template>
+
+
+<template name="yogiDetail">
+	<h1>{{name}}</h1>
+	<div class="btn-group">
+		{{#if subIs 'single'}}
+			<button class="btn" href="#modalAddLessons" data-toggle="modal">Aggiungi lezioni</button>
+		{{/if}}
+		{{#if subIs 'monthly'}}
+			<button class="btn" href="#modalAddMonth" data-toggle="modal">Aggiungi mese</button>
+		{{/if}}
+		<button class="btn changeType">Cambia abbonamento</button>
+		<button class="btn btn-danger archive">Archivia</button>
+	</div>
+	<div class="yogiInfo">
+		<div>Inserito il {{formatDate insertOn}}</div>
+		<div>In totale ha fatto {{numLessons _id}} lezioni</div>
+		{{#if hasLesson _id}}
+			<div>L'ultima volta che ha fatto una lezione era il {{getLastLesson _id}}</div>
+		{{/if}}
 	</div>
 </template>
