@@ -33,6 +33,10 @@ Router.map(function () {
 		before: checkLogin,
 		data: function() { return Yogis.findOne(this.params.id); }
 	});
+	this.route('yogis', {
+		path: '/yogi',
+		before: checkLogin
+	});
 	this.route('lessonsByDate',{
 		before: checkLogin,
 		path: '/lessons/date'

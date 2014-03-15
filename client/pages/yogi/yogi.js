@@ -20,13 +20,16 @@ Template.yogiDetail.subIs = function(type) {
 };
 
 Template.yogiDetail.events({
-	'click .addLessons': function() {
-		var user = Yogis.findOne(Router.current().params.id);
-		console.log(user.subType);
-		if (user.subType == 'single') {
-			console.log('mih');
-		} else {
-			console.log('mah');
-		}
+	'click .archive': function() {
+		var id = Router.current().params.id;
+		Yogis.update({_id:id}, {$set: {disabled: true}}, function(err){
+			if (err) alert('Errore:', err.toString());
+		});
+	},
+	'click .activate': function() {
+		var id = Router.current().params.id;
+		Yogis.update({_id:id}, {$set: {disabled: false}}, function(err){
+			if (err) alert('Errore:', err.toString());
+		});
 	}
 });

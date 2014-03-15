@@ -12,7 +12,6 @@
 	{{>modalAddLessons}}
 </template>
 
-
 <template name="yogiDetail">
 	<h1>{{name}}</h1>
 	<div class="btn-group">
@@ -23,7 +22,12 @@
 			<button class="btn" href="#modalAddMonth" data-toggle="modal">Aggiungi mese</button>
 		{{/if}}
 		<button class="btn changeType">Cambia abbonamento</button>
-		<button class="btn btn-danger archive">Archivia</button>
+		{{#unless disabled}}
+			<button class="btn btn-danger archive">Archivia</button>
+		{{/unless}}
+		{{#if disabled}}
+			<button class="btn btn-primary activate">Riattiva</button>
+		{{/if}}
 	</div>
 	<div class="yogiInfo">
 		<div>Inserito il {{formatDate insertOn}}</div>

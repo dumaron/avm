@@ -1,7 +1,10 @@
 Session.set('mainFilterName', '');
 
 Template.yogiList.yogi = function() {
-	var filter = { subType: Session.get('mainFilterType') };
+	var filter = {
+		subType: Session.get('mainFilterType'),
+		$or: [{disabled: false}, {disabled: {$exists: false}}]
+	};
 	var name = Session.get('mainFilterName');
 	if (name) filter.name = {$regex: name, $options: 'i'};
 	return Yogis.find(filter, {sort:{lessons: 1, startSub: 1, name: 1}});

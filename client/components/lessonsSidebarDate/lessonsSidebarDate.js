@@ -6,19 +6,18 @@ Template.lessonsSidebarDate.humanForm = function(date) {
 	return moment(date,'YYYY-MM-DD').format('DD/MM/YYYY');
 };
 
+Template.lessonsSidebarDate.rendered = function() {
+	var text = Session.get('lessonsDateSidebarText');
+	var sidebar = $('#lessonsDateSidebar');
+	sidebar.find('input').val(text);
+	sidebarFilter(text, sidebar.find('li'));
+};
+
 Template.lessonsSidebarDate.events({
 	'keyup input': function(event) {
 		var text = event.srcElement.value.toLocaleLowerCase();
 		var voices = $('#lessonsDateSidebar').find('li');
-		if (text == '')
-			voices.css('display','show');
-		else {
-			voices.filter(function(idx, elem){
-				return $(elem).find('a').html().toLowerCase().indexOf(text) == -1;
-			}).css('display', 'none');
-			voices.filter(function(idx, elem){
-				return $(elem).find('a').html().toLowerCase().indexOf(text) != -1;
-			}).css('display', 'show');
-		}
+		Session.set('lessonsDateSidebarText', text);
+		sidebarFilter(text, voices);
 	}
 });
