@@ -33,3 +33,32 @@ Template.yogiDetail.events({
 		});
 	}
 });
+
+Template.yogiDetail.rendered = function() {
+	var lessons = Lessons.find({}, {sort:{date:-1}, limit: 100}).fetch(), yogiId = Router.current().params.id;
+	var perRow = 10,width = 600, height = 400, gridSize = Math.floor(width / perRow);
+	var hcount= 0, vcount=0;
+	var svg = d3.select("#chart").append("svg")
+		.attr("width", width)
+		.attr("height", height)
+		.append("g");
+
+	var heatMap = svg.selectAll(".date")
+		.data(lessons)
+		.enter().append("rect")
+		.attr("x", function(d) { return hcount++ * gridSize; })
+		.attr("y", function(d) { return Math.floor(vcount++ / perRow) * gridSize; })
+		.attr("rx", 4)
+		.attr("ry", 4)
+		.attr("class", "lesson")
+		.attr("width", gridSize -2)
+		.attr("height", gridSize -2)
+		.style("fill", function(d) {
+			return d.presents.indexOf(yogiId) == -1 ? '#edf8b1' : '#c7e9b4';
+		});
+
+	heatMap.append("title").text(function(d) {
+		return moment(d.date, 'YYYY-MM-DD').format('DD/MM/YYYY');
+	});
+
+};

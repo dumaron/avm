@@ -138,9 +138,12 @@ td.warning {
 	padding-right: 4px;
 }
 
-/* YOGI */
+/* YOGI DETAIL*/
 .yogiInfo {
-	padding-top: 20px;
 	font-style: italic;
 	color: gray;
+}
+
+.yogiInfo #chart {
+	margin-top: 30px;
 }

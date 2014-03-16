@@ -30,10 +30,12 @@
 		{{/if}}
 	</div>
 	<div class="yogiInfo">
-		<div>Inserito il {{formatDate insertOn}}</div>
-		<div>In totale ha fatto {{numLessons _id}} lezioni</div>
+
+		<!--div>Inserito il {{formatDate insertOn}}</div>
+		<div>In totale ha fatto {{numLessons _id}} lezioni</div-->
 		{{#if hasLesson _id}}
-			<div>L'ultima volta che ha fatto una lezione era il {{getLastLesson _id}}</div>
+			<!--div>L'ultima volta che ha fatto una lezione era il {{getLastLesson _id}}</div-->
 		{{/if}}
+		<div id="chart"></div>
 	</div>
 </template>
