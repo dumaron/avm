@@ -54,7 +54,7 @@ Template.yogiDetail.rendered = function() {
 		.attr("width", gridSize -2)
 		.attr("height", gridSize -2)
 		.style("fill", function(d) {
-			return d.presents.indexOf(yogiId) == -1 ? '#edf8b1' : '#c7e9b4';
+			return d.presents.indexOf(yogiId) == -1 ? '#efefef' : '#CFF09E';
 		});
 
 	heatMap.append("title").text(function(d) {

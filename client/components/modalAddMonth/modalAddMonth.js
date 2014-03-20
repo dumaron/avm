@@ -14,7 +14,7 @@ Template.modalAddMonth.rendered = function() {
 Template.modalAddMonth.events({
 	'click .btn-primary': function() {
 		var modal = $('#modalAddMonth');
-		var startsFrom = moment(modal.find('.startsFrom').val(), 'DD/MM/YYYY').format('YYYY-MM-DD')
+		var startsFrom = moment(modal.find('.startsFrom').val(), 'DD/MM/YYYY').format('YYYY-MM-DD');
 		var id = Router.current().params.id;
 		Yogis.update({_id:id}, {$set :{startSub: startsFrom}}, function(err) {
 			if (err) alert('C\'è stato un errore:', err.toString());

@@ -1,0 +1,31 @@
+<template name="modalChangeToMonthly">
+	<div id="modalChangeToMonthly" class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3>Cambia tipo di abbonamento</h3>
+		</div>
+		<div class="modal-body">
+			<p>Inserisci il giorno da cui l'iscritto avvia il nuovo tipo di abbonamento.
+			<strong>ATTENZIONE</strong>: una volta premuto su "Cambia" il tipo di abbonamento cambierà
+			ed eventuali lezioni rimanenti nell'abbonamento singolo andranno perse.
+			</p>
+			<form class="form-horizontal">
+				<div class="control-group mensile">
+					<label class="control-label">
+						Inizio abbonamento
+					</label>
+					<div class="controls">
+						<div class="input-append date datepicker">
+							<input readonly type="text" class="startsFrom"/>
+							<span class="add-on"><i class="icon-th"></i></span>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal">Annulla</button>
+			<button type="btn" class="btn btn-primary">Cambia</button>
+		</div>
+	</div>
+</template>

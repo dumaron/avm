@@ -17,7 +17,7 @@ Template.yogiList.getColorSingle = function(lessons) {
 };
 
 Template.yogiList.getColorMonthly = function(startSub) {
-	if (moment(startSub, 'YYYY-MM-DD').add('month',1).isBefore())
+	if (moment(startSub, 'YYYY-MM-DD').add('day',30).isBefore())
 		return 'important';
 	return '';
 };
@@ -35,5 +35,5 @@ Template.yogiList.subIs = function(type) {
 };
 
 Template.yogiList.formatDate = function(startSub) {
-	return moment(startSub, 'YYYY-MM-DD').add('month',1).format('DD/MM/YYYY');
+	return moment(startSub, 'YYYY-MM-DD').add('day',30).format('DD/MM/YYYY');
 };

@@ -14,7 +14,7 @@ Template.presents.rendered = function() {
 };
 
 Template.presents.yogi = function() {
-	return Yogis.find({}, {sort:{name: 1}});
+	return Yogis.find({$or: [{disabled: false}, {disabled: {$exists: false}}]}, {sort:{name: 1}});
 };
 
 Template.guests.guest =  function() {

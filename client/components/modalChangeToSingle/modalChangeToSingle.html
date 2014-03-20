@@ -1,0 +1,30 @@
+<template name="modalChangeToSingle">
+	<div id="modalChangeToSingle" class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3>Cambia tipo di abbonamento</h3>
+		</div>
+		<div class="modal-body">
+			<p>Inserisci il numero di lezioni con cui l'iscritto avvia il nuovo tipo di abbonamento.
+			<strong>ATTENZIONE</strong>: una volta premuto su "Cambia" il tipo di abbonamento cambierà
+			ed eventuali giorni rimanenti nell'abbonamento mensione andranno persi.
+			</p>
+			<form class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label">Numero lezioni</label>
+					<div class="controls">
+						<select class="numLessons">
+							<option value="1">1</option>
+							<option value="5">5</option>
+							<option value="10">10</option>
+						</select>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal">Annulla</button>
+			<button type="btn" class="btn btn-primary">Cambia</button>
+		</div>
+	</div>
+</template>

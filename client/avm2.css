@@ -76,6 +76,8 @@ td.lessons {
 	background-color: #7ab5d3;
 	text-align: center;
 	width: 22%;
+	color: black;
+	font-style: normal;
 }
 
 td.important {
@@ -142,8 +144,9 @@ td.warning {
 .yogiInfo {
 	font-style: italic;
 	color: gray;
+	margin-top: 30px;
 }
 
 .yogiInfo #chart {
-	margin-top: 30px;
+
 }
