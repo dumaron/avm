@@ -33,9 +33,15 @@ Template.modalAddYogi.events({
 				case 'singolo': yogi.lessons = lessons; yogi.subType= 'single';break;
 				case 'mensile': yogi.startSub = startSubscription; yogi.subType= 'monthly'; break;
 			}
-			Yogis.insert(yogi, function(err) {
-				if (err) alert('C\'è stato un errore nell\'inserimento. Mandami una mail che ne parliamo :)');
-				else modal.modal('hide');
+			Yogis.insert(yogi, function(err, id) {
+				if (err) {
+					alert('C\'è stato un errore nell\'inserimento. Mandami una mail che ne parliamo :)');
+					Logger.log('Errore nell\'inserimento di un nuovo iscritto');
+				}
+				else {
+					modal.modal('hide');
+					Logger.log('Inserito l\'iscritto con id '+id);
+				}
 			});
 		}
 	},

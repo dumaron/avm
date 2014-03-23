@@ -62,7 +62,16 @@ Template.presents.events({
 		if (guests.length != 0)
 			lesson.guests = guests;
 
-		Lessons.insert(lesson);
+		Lessons.insert(lesson, function(err, id) {
+			if (err) {
+				alert('Errore nell\'inserimento, mandami una mail che ne parliamo');
+				Logger.log('Errore nell\'inserimento di una lezione:'+err.toString());
+			}
+			else {
+				Logger.log('Inserimento della lezione con id '+ id);
+				Router.go('/lessons/date/'+id);
+			}
+		});
 	}
 });
 

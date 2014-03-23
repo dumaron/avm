@@ -1,5 +1,6 @@
 Meteor.subscribe('yogis');
 Meteor.subscribe('lessons');
+Meteor.subscribe('log');
 
 Router.map(function () {
 	this.route('login', {

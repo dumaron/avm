@@ -17,8 +17,14 @@ Template.modalAddMonth.events({
 		var startsFrom = moment(modal.find('.startsFrom').val(), 'DD/MM/YYYY').format('YYYY-MM-DD');
 		var id = Router.current().params.id;
 		Yogis.update({_id:id}, {$set :{startSub: startsFrom}}, function(err) {
-			if (err) alert('C\'è stato un errore:', err.toString());
-			else modal.modal('hide');
+			if (err) {
+				alert('C\'è stato un errore:', err.toString());
+				Logger.log('Errore nell\'aggiunta lezione singola:' + err.toString());
+			}
+			else {
+				modal.modal('hide');
+				Logger.log('Aggiunta di 30 giorni a partire dal '+ startsFrom+' all\'utente con id '+id);
+			}
 		});
 
 	}

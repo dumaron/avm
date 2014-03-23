@@ -1,5 +1,6 @@
 Yogis = new Meteor.Collection('yogis');
 Lessons = new Meteor.Collection('lessons');
+Log = new Meteor.Collection('log');
 
 Yogis.allow({
 	insert: function(userId) {

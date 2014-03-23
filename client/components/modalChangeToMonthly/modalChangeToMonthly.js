@@ -17,8 +17,14 @@ Template.modalChangeToMonthly.events({
 		var modal = $('#modalChangeToMonthly');
 		var startsFrom = moment(modal.find('.startsFrom').val(), 'DD/MM/YYYY').format('YYYY-MM-DD');
 		Yogis.update({_id:id}, {$set: {subType: 'monthly', startSub: startsFrom}}, function(err) {
-			if (err) alert('Errore imprevisto, mandami una mail che ne parliamo');
-			else modal.modal('hide');
+			if (err) {
+				alert('Errore imprevisto, mandami una mail che ne parliamo');
+				Logger.log('Errore nel passaggio ad abbonamento mensile dell\'iscritto con id '+id);
+			}
+			else {
+				modal.modal('hide');
+				Logger.log('Passaggio dell\'iscritto con id '+id+' ad abbonamento mensile');
+			}
 		});
 	}
 });

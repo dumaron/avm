@@ -6,3 +6,22 @@ for (var i=0; i<AllowedUsers.length; i++) {
 			{$set : {'emails.0.verified': true}});
 	}
 }
+
+Meteor.publish('yogis', function () {
+	return Yogis.find({
+		owner: this.userId
+	});
+});
+
+Meteor.publish('lessons', function () {
+	return Lessons.find({
+		owner: this.userId
+	});
+});
+
+Meteor.publish('log', function () {
+	return Log.find({
+		owner: this.userId,
+		insertedOn: {$gt: moment().add('years',1).toDate()}
+	});
+});
