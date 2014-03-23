@@ -1,0 +1,24 @@
+<template name="modalUpdateYogi">
+	<div id="modalUpdateYogi" class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3>Aggiungi iscritto</h3>
+		</div>
+		<div class="modal-body">
+			<p>Inserisci il nuovo nome dell'iscritto. <strong>ATTENZIONE</strong>: una volta premuto sul pulsante
+			"Modifica" il vecchio nome verrà cancellato daldatabase. </p>
+			<form class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label">Nome iscritto</label>
+					<div class="controls">
+						<input type="text" placeholder="Nome Cognome" value="{{name}}" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal">Annulla</button>
+			<button type="btn" class="btn btn-primary">Modifica</button>
+		</div>
+	</div>
+</template>

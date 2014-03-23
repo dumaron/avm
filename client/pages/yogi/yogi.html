@@ -8,6 +8,7 @@
 			</div>
 		</div>
 	</div>
+	{{>modalUpdateYogi this}}
 </template>
 
 <template name="yogiDetail">
@@ -15,6 +16,7 @@
 	<div class="btn-group">
 		{{#if subIs 'single'}}
 			<button class="btn" href="#modalAddLessons" data-toggle="modal">Aggiungi lezioni</button>
+			<button class="btn" href="#modalUpdateYogi" data-toggle="modal">Modifica nome</button>
 			<button class="btn changeType" href="#modalChangeToMonthly" data-toggle="modal">Cambia abbonamento</button>
 		{{/if}}
 		{{#if subIs 'monthly'}}
