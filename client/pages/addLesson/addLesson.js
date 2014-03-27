@@ -69,9 +69,25 @@ Template.presents.events({
 			}
 			else {
 				Logger.log('Inserimento della lezione con id '+ id);
+				presents.forEach(function(yid) {
+					if (Yogis.findOne(yid).subType == 'single')
+						Yogis.update({_id:yid}, {$inc: {lessons:-1}}, function(err) {
+							if (err) {
+								Logger.log('Errore nella rimozione di una lezione dall\'utente con id '+yid+' per la lezione con id '+id);
+							} else {
+								Logger.log('Tolta una lezione dall\'abbonamento dell\'utente con id '+yid+' per la lezione con id '+id);
+							}
+					});
+				});
 				Router.go('/lessons/date/'+id);
 			}
 		});
+	},
+	'keyup #presentsFilter': function(evt) {
+		var text = $('#presentsFilter').val();
+		var voices = $('#presents').find('span');
+		presentsFilter(text, voices);
+		console.log(text);
 	}
 });
 

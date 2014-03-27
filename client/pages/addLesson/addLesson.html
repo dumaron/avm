@@ -54,7 +54,8 @@
 	<h3>Presenti alla lezione (<span id="numPresents">0</span>)
 		<input type="button" class="btn btn-large btn-primary pull-right" value="Conferma" />
 	</h3>
-	<div class="well">
+	<div id="presents" class="well">
+		<input id="presentsFilter" class="form-control span12" type="text" placeholder="Filtra per nome"/>
 	{{#each yogi}}
 		<span id="{{_id}}" class="label yogi">{{name}}</span>
 	{{/each}}

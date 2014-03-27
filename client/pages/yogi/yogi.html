@@ -16,13 +16,13 @@
 	<div class="btn-group">
 		{{#if subIs 'single'}}
 			<button class="btn" href="#modalAddLessons" data-toggle="modal">Aggiungi lezioni</button>
-			<button class="btn" href="#modalUpdateYogi" data-toggle="modal">Modifica nome</button>
 			<button class="btn changeType" href="#modalChangeToMonthly" data-toggle="modal">Cambia abbonamento</button>
 		{{/if}}
 		{{#if subIs 'monthly'}}
 			<button class="btn" href="#modalAddMonth" data-toggle="modal">Aggiungi mese</button>
 			<button class="btn changeType" href="#modalChangeToSingle" data-toggle="modal">Cambia abbonamento</button>
 		{{/if}}
+			<button class="btn" href="#modalUpdateYogi" data-toggle="modal">Modifica nome</button>
 		{{#unless disabled}}
 			<button class="btn btn-danger archive">Archivia</button>
 		{{/unless}}
