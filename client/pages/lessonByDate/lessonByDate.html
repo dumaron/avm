@@ -8,7 +8,9 @@
 				<h3>Alla lezione erano presenti <span class="important">{{presents.length}}</span> persone, ovvero:</h3>
 				<ul>
 				{{#each presents}}
-					<li><a href="/yogi/{{this}}">{{findYogiName this}}</a></li>
+					<li id="yogi-{{this}}"><a href="" class="remove"><i class="icon-trash"></i></a>
+						<a href="/yogi/{{this}}">{{findYogiName this}}</a>
+					</li>
 				{{/each}}
 				</ul>
 				<h3>Ospiti:</h3>
