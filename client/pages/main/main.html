@@ -12,10 +12,10 @@
 
 <template name="yogiList">
 	<ul class="nav nav-tabs">
-		<li {{#if subIs 'single'}}class="active"{{/if}}>
+		<li {{subIs 'single'}} class="active">
 			<a href="/show/single">Singolo</a>
 		</li>
-		<li {{#if subIs 'monthly'}}class="active"{{/if}}>
+		<li {{subIs 'monthly'}} class="active">
 			<a href="/show/monthly">Mensile</a>
 		</li>
 	</ul>

@@ -11,7 +11,7 @@ Template.yogisSidebar.rendered = function() {
 
 Template.yogisSidebar.events({
 	'keyup input': function(event) {
-		var text = event.srcElement.value.toLocaleLowerCase();
+		var text = event.target.value.toLocaleLowerCase();
 		var voices = $('#yogisSidebar').find('li');
 		Session.set('yogisSidebarText', text);
 		sidebarFilter(text, voices);

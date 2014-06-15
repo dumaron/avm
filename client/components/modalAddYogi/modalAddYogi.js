@@ -47,7 +47,7 @@ Template.modalAddYogi.events({
 	},
 	'change select': function(event) {
 		var modal = $('#modalAddYogi');
-		var type = $(event.srcElement).val();
+		var type = $(event.target).val();
 		switch (type) {
 			case 'mensile':
 				modal.find('.mensile').show();

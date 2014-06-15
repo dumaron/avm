@@ -4,7 +4,7 @@ Meteor.subscribe('log');
 
 Router.map(function () {
 	this.route('login', {
-		before: alreadyLogged
+		onBeforeAction: alreadyLogged
 	});
 	this.route('main', {
 		path: '/',
@@ -12,7 +12,7 @@ Router.map(function () {
 	});
 	this.route('showYogi', {
 		path: '/show/:type',
-		before: [
+		onBeforeAction: [
 			checkLogin,
 			function() {
 				Session.set('mainFilterType', this.params.type);
@@ -27,23 +27,23 @@ Router.map(function () {
 		}
 	});
 	this.route('addLesson', {
-		before: checkLogin
+		onBeforeAction: checkLogin
 	});
 	this.route('yogi', {
 		path: '/yogi/:id',
-		before: checkLogin,
+		onBeforeAction: checkLogin,
 		data: function() { return Yogis.findOne(this.params.id); }
 	});
 	this.route('yogis', {
 		path: '/yogi',
-		before: checkLogin
+		onBeforeAction: checkLogin
 	});
 	this.route('lessonsByDate',{
-		before: checkLogin,
+		onBeforeAction: checkLogin,
 		path: '/lessons/date'
 	});
 	this.route('lessonByDate',{
-		before: checkLogin,
+		onBeforeAction: checkLogin,
 		path: '/lessons/date/:id',
 		data: function() { return Lessons.findOne(this.params.id); }
 	});

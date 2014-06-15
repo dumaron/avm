@@ -23,7 +23,7 @@ Template.guests.guest =  function() {
 
 Template.presents.events({
 	'click .yogi, ': function(evt) {
-		var elem = $(evt.srcElement),
+		var elem = $(evt.target),
 			effect = 'label-important';
 
 		if (!elem.hasClass(effect)) {
